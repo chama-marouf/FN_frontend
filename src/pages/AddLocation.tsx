@@ -190,16 +190,23 @@ function AddLocation() {
                 </button>
             </div>
 
-            <Modal show={true} handleClose={() => console.log("close modal")}>
-                <form>
-                    <label>Status</label>
-                    <input />
-                    <label>Charger type</label>
-                    <input />
-                    <label>Serial number</label>
-                    <input />
-                    <button>save</button>
-                    <button>cancel</button>
+            <Modal show={modalIsOpen} handleClose={() => closeModal()}>
+                <form
+                    style={{
+                        display: "flex",
+                        justifyContent: "flex-start",
+                        flexDirection: "column",
+
+                        padding: "30px 50px",
+                    }}>
+                    <label className='label'>Status</label>
+                    <input className='input' />
+                    <label className='label'>Charger type</label>
+                    <input className='input' />
+                    <label className='label'>Serial number</label>
+                    <input className='input' />
+                    <button className='button'>save</button>
+                    <button className='button'>cancel</button>
                 </form>
             </Modal>
         </div>
