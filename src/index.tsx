@@ -6,6 +6,7 @@ import Locations from "./../src/pages/Locations"
 import AddLocation from "./../src/pages/AddLocation"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import reportWebVitals from "./reportWebVitals"
+import EditLocation from "./pages/EditLocation"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement)
 console.log("hello")
@@ -15,6 +16,7 @@ root.render(
             <Route path='/' element={<App />} />
             <Route path='/locations' element={<Locations />} />
             <Route path='locations/addLocation' element={<AddLocation />} />
+            <Route path='/editLocation' element={<EditLocation />} />
         </Routes>
     </BrowserRouter>
 )

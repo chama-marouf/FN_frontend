@@ -1,107 +1,213 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #efefef;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #efefef;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .start-button {
-  background-color: #FCD854;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  margin-top: 20px;
-  font-weight: bold;
+    background-color: #fcd854;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
 }
-.location-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
- padding: 24px;
+.location-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 24px;
 }
-.add-location{
-display: flex;
-justify-content: center;
-align-items: center;
-  width: 200px;
-  background-color: #FCD854;
-  color:#535448;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  margin-top: 20px;
-  font-weight: bold;
-
+.add-location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    background-color: #fcd854;
+    color: #535448;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
 }
-.row{
- 
-  height: 60px;
-
+.row {
+    height: 60px;
+    padding: 8px;
 }
- table {
-  border-collapse: collapse;
-  border:1px solid #535448;
+table {
+    border-collapse: collapse;
+    border: 1px solid #dddddd;
 }
 tr.border_bottom td {
-  border-bottom: 1px solid #535448;
+    border-top: 1px solid #dddddd;
 }
 
-table tr:nth-child(odd) td{
-  background-color: #f2f2f2;
-
+table tr:nth-child(odd) td {
+    background-color: rgb(255, 255, 255);
 }
-table tr:nth-child(even) td{
-  background-color: rgb(255, 255, 255);
+table tr:nth-child(even) td {
+    background-color: #f2f2f2;
 }
 
 th {
- 
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  margin-top: 20px;
-  font-weight: bold;
+    height: 50px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: #f2f2f2;
 }
 td {
-  border: none;
-  text-align: left;
-  padding: 16px;
-  font-size: 24px;
+    border: none;
+    text-align: left;
+    padding: 16px;
+    font-size: 24px;
+
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
 }
 
+.form {
+    background: white;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    padding: 30px 50px;
+}
+
+.input {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+}
+
+.label {
+    color: #3d3d3d;
+    display: block;
+    font-family: sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 8px;
+}
+.submitButton {
+    align-self: flex-end;
+    width: 200px;
+
+    background-color: #fcd854;
+    color: #535448;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 14px;
+    margin: 20px 0px;
+}
+
+.add-charger-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    background-color: #fcd854;
+    color: #535448;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.remove-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    background-color: #c4c4c4;
+    color: #535448;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.button {
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: 1px solid #c4c4c4;
+    background-color: rgba(255, 255, 255, 0);
+    text-decoration: none;
+    color: #3d3d3d;
+    font-size: 14px;
+}
+.card {
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+
+    font-weight: bold;
+    margin: 24px;
+    border-collapse: collapse;
+    border: 1px solid #bababa;
+    padding: 24px;
+}
+.edit-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 24px;
+}
+.badge {
+    color: #fff;
+    border-radius: 5px;
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 16px;
+}
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

@@ -1,26 +1,21 @@
 import React, { useEffect } from "react"
-import logo from "./logo.svg"
 import axios from "axios"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import plusIcon from "../assets/icn_plus.png"
-const URL = "https://jsonplaceholder.typicode.com/users"
+
+const URL = "http://localhost:4040/locations"
 function Locations() {
     const navigate = useNavigate()
-    const [employees, setEmployees] = React.useState<any[]>([])
+    const [locations, setlocations] = React.useState<any[]>([])
+
     useEffect(() => {
         getData()
     }, [])
 
     const getData = async () => {
         const response = await axios.get(URL)
-        setEmployees(response.data)
-    }
-
-    const removeData = (id: any) => {
-        axios.delete(`${URL}/${id}`).then((res: any) => {
-            const del = employees.filter((employee) => id !== employee?.id)
-            setEmployees(del)
-        })
+        console.log("dataaaa", response.data.locations)
+        setlocations(response.data.locations)
     }
 
     const renderHeader = () => {
@@ -40,21 +35,27 @@ function Locations() {
 
     const renderBody = () => {
         return (
-            employees &&
-            employees.map(({ id, name, email, phone }) => {
+            locations &&
+            locations.map(({ id, data }) => {
                 return (
                     <tr className='border_bottom' key={id}>
-                        <td className='td'>{id}</td>
-                        <td>{name}</td>
-                        <td className='td'>{email}</td>
-                        <td className='td'>{phone}</td>
-                        <td className='td'>{phone}</td>
+                        <td>{data.location}</td>
+                        <td>{id}</td>
+                        <td>{data.chargers.length}</td>
+
+                        <td className='td'>{data.country}</td>
+                        <td className='td'>{data.lastUpdated}</td>
                         <td className='opration '>
-                            <button
+                            <Link
+                                to={{
+                                    pathname: "/EditLocation",
+                                }}
+                                state={{ id, data }}
                                 className='button'
-                                onClick={() => removeData(id)}>
+                                // onClick={() => navigate(``)}
+                            >
                                 Edit
-                            </button>
+                            </Link>
                         </td>
                     </tr>
                 )
@@ -86,7 +87,7 @@ function Locations() {
                 </button>
             </div>
 
-            <table id='employee'>
+            <table id='location'>
                 <thead>
                     <tr>{renderHeader()}</tr>
                 </thead>
