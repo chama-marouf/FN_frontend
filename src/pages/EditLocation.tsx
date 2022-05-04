@@ -11,7 +11,7 @@ const save = require("../assets/icn_save.png")
 const remove = require("../assets/icn_remove.png")
 
 interface charger {
-    id: string
+    id: number
     type: string
     serialNumber: number
     status: string
@@ -29,8 +29,6 @@ interface ILocation {
 }
 
 export default function EditLocation() {
-    const [locationRemoved, setLocationRemoved] = useState(true)
-    const navigate = useNavigate()
     const params: any = useLocation()
 
     const location = params?.state?.data
@@ -58,7 +56,7 @@ export default function EditLocation() {
         console.log("response", response)
     }
 
-    const chargers = [
+    const chargers: charger[] = [
         {
             id: 87879,
             type: "type one",
@@ -170,7 +168,10 @@ export default function EditLocation() {
                         Add charger
                     </button>
                 </div>
-                <ChargersTable chargers={chargers} />
+                <ChargersTable
+                    updateChargers={() => console.log("update chargers")}
+                    chargers={chargers}
+                />
             </div>
             <div className='edit-footer'>
                 <button
@@ -184,9 +185,7 @@ export default function EditLocation() {
                     Remove Location
                 </button>
 
-                <button
-                    onClick={handleSubmit(onSubmit)}
-                    className='add-charger-button'>
+                <button type='submit' className='add-charger-button'>
                     <img
                         style={{ width: 16, height: 16, marginRight: 8 }}
                         src={save}

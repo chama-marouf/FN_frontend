@@ -4,12 +4,11 @@ import axios from "axios"
 import plusIcon from "../assets/icn_plus.png"
 import lightBolt from "../assets/icn_light_bolt.png"
 import ChargersTable from "../components/ChargersTable"
-import ReactDOM from "react-dom"
-import Modal from "../components/AddLocationModal"
+import Modal from "../components/AddChargerModal"
 const save = require("../assets/icn_save.png")
 
 interface charger {
-    id: string
+    id: number
     type: string
     serialNumber: number
     status: string
@@ -30,7 +29,7 @@ function AddLocation() {
         console.log("add location data", response)
     }
     const [modalIsOpen, setIsOpen] = React.useState(false)
-    const [chargers, setChargers] = React.useState([])
+    const [chargers, setChargers] = React.useState([] as charger[])
 
     function openModal() {
         setIsOpen(true)

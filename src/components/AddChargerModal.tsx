@@ -30,7 +30,7 @@ const Modal = ({ handleClose, show, children }: IModal) => {
                     <img
                         style={{ width: 24, height: 24, marginRight: 10 }}
                         src='../assets/icn_pin.png'
-                        alt='my image'
+                        alt='close'
                     />
                 </button>
                 {children}

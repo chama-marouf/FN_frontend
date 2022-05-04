@@ -5,7 +5,7 @@ export default function Badge({ status }: { status: string }) {
         <div
             className='badge'
             style={{
-                backgroundColor: status === "CONNECTED" ? "green" : "red",
+                backgroundColor: status === "CONNECTED" ? "#52c41a" : "#ff4d4f",
             }}>
             {status}
         </div>

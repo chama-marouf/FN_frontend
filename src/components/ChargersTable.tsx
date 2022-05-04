@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import Badge from "./Badge"
 
 interface charger {
-    id: string
+    id: number
     type: string
     serialNumber: number
     status: string
@@ -38,17 +38,22 @@ export default function ChargersTable({ chargers, updateChargers }: props) {
                         <td className='td'>{charger.type}</td>
 
                         <td className='td'>{charger.serialNumber}</td>
-                        <td className='td'>
-                            {" "}
+                        <td
+                            style={{
+                                display: "flex",
+                                alignItems: "flex-start",
+                            }}
+                            className='td'>
                             <Badge status={charger.status} />{" "}
                         </td>
                         <td className='td'>{charger.lastUpdated}</td>
                         <td className='opration '>
                             <button
-                                className='button'
-                                onClick={() => navigate("EditLocation")}>
+                                style={{ marginRight: 8 }}
+                                className='button'>
                                 Edit
                             </button>
+                            <button className='button'>Delete</button>
                         </td>
                     </tr>
                 )

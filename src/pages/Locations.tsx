@@ -51,9 +51,7 @@ function Locations() {
                                     pathname: "/EditLocation",
                                 }}
                                 state={{ id, data }}
-                                className='button'
-                                // onClick={() => navigate(``)}
-                            >
+                                className='button'>
                                 Edit
                             </Link>
                         </td>
