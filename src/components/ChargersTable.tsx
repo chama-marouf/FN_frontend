@@ -26,7 +26,11 @@ export default function ChargersTable({ chargers, updateChargers }: props) {
         ]
 
         return headerElement.map((key, index) => {
-            return <th key={index}>{key}</th>
+            return (
+                <th style={{ textAlign: "center" }} key={index}>
+                    {key}
+                </th>
+            )
         })
     }
     const renderBody = () => {

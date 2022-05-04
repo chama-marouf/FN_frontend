@@ -204,8 +204,30 @@ function AddLocation() {
                     <input className='input' />
                     <label className='label'>Serial number</label>
                     <input className='input' />
-                    <button className='button'>save</button>
-                    <button className='button'>cancel</button>
+                    <div
+                        style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            marginTop: 16,
+                        }}>
+                        <button
+                            style={{
+                                backgroundColor: "#fcd854",
+                                border: "none",
+                                borderRadius: 4,
+                                marginRight: 8,
+                            }}
+                            onClick={() => closeModal()}
+                            className='button'>
+                            save
+                        </button>
+                        <button
+                            style={{ borderRadius: 4 }}
+                            onClick={() => closeModal()}
+                            className='button'>
+                            cancel
+                        </button>
+                    </div>
                 </form>
             </Modal>
         </div>
